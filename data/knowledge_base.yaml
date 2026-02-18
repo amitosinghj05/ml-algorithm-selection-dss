@@ -1,0 +1,156 @@
+families:
+  - name: "Tree Ensembles (Gradient Boosting / Random Forest)"
+    examples:
+      - "XGBoost"
+      - "LightGBM"
+      - "CatBoost"
+      - "Random Forest"
+    modalities: ["tabular", "time_series"]
+    domains: ["healthcare", "finance", "manufacturing_iiot", "agriculture_environment", "cybersecurity"]
+    tags: ["high_accuracy", "scalable", "robust", "handles_missing", "handles_nonlinear"]
+    notes:
+      - "Strong performance on structured/tabular datasets"
+      - "Common default for real-world tabular ML"
+      - "Works well with mixed feature types"
+
+  - name: "Linear / Generalized Linear Models"
+    examples:
+      - "Linear Regression"
+      - "Logistic Regression"
+      - "GLMs"
+    modalities: ["tabular", "time_series"]
+    domains: ["healthcare", "finance", "manufacturing_iiot", "agriculture_environment", "cybersecurity"]
+    tags: ["interpretable", "fast_train", "fast_infer", "baseline"]
+    notes:
+      - "Highly interpretable baseline models"
+      - "Good when explainability is required"
+
+  - name: "Support Vector Machines"
+    examples:
+      - "SVM (RBF)"
+      - "Linear SVM"
+      - "SVR"
+    modalities: ["tabular", "text"]
+    domains: ["healthcare", "finance", "cybersecurity"]
+    tags: ["small_data", "high_accuracy", "slower_train"]
+    notes:
+      - "Often effective on smaller datasets"
+      - "Can be slower to train on very large data"
+
+  - name: "CNNs (Convolutional Neural Networks)"
+    examples:
+      - "ResNet"
+      - "EfficientNet"
+      - "U-Net"
+    modalities: ["image"]
+    domains: ["healthcare", "agriculture_environment", "manufacturing_iiot"]
+    tags: ["unstructured", "high_accuracy", "transfer_learning", "needs_compute"]
+    notes:
+      - "Dominant family for image-based tasks"
+      - "Transfer learning can reduce labeled data needs"
+
+  - name: "Transformers (NLP / Text)"
+    examples:
+      - "BERT"
+      - "RoBERTa"
+      - "T5"
+    modalities: ["text"]
+    domains: ["healthcare", "finance", "cybersecurity", "agriculture_environment"]
+    tags: ["unstructured", "high_accuracy", "transfer_learning", "needs_compute"]
+    notes:
+      - "Strong for modern NLP tasks"
+      - "Pretraining helps when labels are limited"
+
+  - name: "Vision Transformers"
+    examples:
+      - "ViT"
+      - "Swin Transformer"
+    modalities: ["image"]
+    domains: ["healthcare", "agriculture_environment", "manufacturing_iiot"]
+    tags: ["unstructured", "high_accuracy", "transfer_learning", "needs_compute"]
+    notes:
+      - "Transformer-based models for vision"
+      - "Often competitive with CNNs depending on data scale"
+
+  - name: "Sequence Models (RNN/LSTM/GRU)"
+    examples:
+      - "LSTM"
+      - "GRU"
+    modalities: ["time_series", "text"]
+    domains: ["finance", "manufacturing_iiot", "healthcare", "cybersecurity"]
+    tags: ["sequence", "handles_temporal", "medium_train"]
+    notes:
+      - "Useful for sequential patterns in time series"
+      - "Can be simpler than transformer-based time-series models"
+
+  - name: "Time-Series Transformers"
+    examples:
+      - "Temporal Fusion Transformer"
+      - "Informer"
+    modalities: ["time_series"]
+    domains: ["finance", "manufacturing_iiot", "healthcare", "agriculture_environment"]
+    tags: ["sequence", "high_accuracy", "handles_temporal", "needs_compute"]
+    notes:
+      - "Modern architectures for time-series forecasting/anomaly detection"
+      - "Can outperform classical approaches on complex temporal patterns"
+
+  - name: "Unsupervised Clustering"
+    examples:
+      - "K-Means"
+      - "DBSCAN"
+      - "HDBSCAN"
+    modalities: ["tabular", "time_series"]
+    domains: ["manufacturing_iiot", "cybersecurity", "agriculture_environment", "finance"]
+    tags: ["unsupervised", "no_labels", "fast_train"]
+    notes:
+      - "Useful when labels are not available"
+      - "Often used for segmentation / grouping / pattern discovery"
+
+  - name: "Anomaly Detection (Unsupervised)"
+    examples:
+      - "Isolation Forest"
+      - "One-Class SVM"
+      - "Autoencoder"
+    modalities: ["tabular", "time_series"]
+    domains: ["manufacturing_iiot", "cybersecurity", "finance", "healthcare"]
+    tags: ["anomaly", "no_labels", "robust_outliers"]
+    notes:
+      - "Useful when anomalies are rare and labels are limited"
+      - "Common in cybersecurity + IIoT monitoring"
+
+  - name: "Generative Models (for augmentation / synthetic data)"
+    examples:
+      - "GANs"
+      - "VAEs"
+      - "Diffusion Models"
+    modalities: ["image", "text", "tabular", "time_series"]
+    domains: ["healthcare", "finance", "manufacturing_iiot", "agriculture_environment", "cybersecurity"]
+    tags: ["limited_labels", "augmentation", "privacy_sensitive"]
+    notes:
+      - "Used to augment data when labels are scarce"
+      - "Can support privacy-preserving synthetic data generation"
+
+  - name: "Privacy-Preserving / Federated Learning"
+    examples:
+      - "Federated Averaging"
+      - "Secure Aggregation (concept)"
+    modalities: ["tabular", "text", "image", "time_series"]
+    domains: ["healthcare", "finance"]
+    tags: ["privacy_sensitive", "governance", "distributed"]
+    notes:
+      - "Useful when data cannot be centralized"
+      - "Common for regulated domains (healthcare/finance)"
+
+domains:
+  healthcare: "Healthcare / Medical"
+  finance: "Finance"
+  cybersecurity: "Networking & Cybersecurity"
+  manufacturing_iiot: "Manufacturing & IIoT"
+  agriculture_environment: "Agriculture & Environment"
+
+modalities:
+  tabular: "Structured / Tabular"
+  text: "Text / Documents"
+  image: "Images / Vision"
+  time_series: "Time-series / Sensor streams"
+  multimodal: "Multimodal (mixed types)"
